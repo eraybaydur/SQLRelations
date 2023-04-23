@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SQLRelations.BireBir;
 
 namespace SQLRelations
 {
@@ -21,6 +22,7 @@ namespace SQLRelations
             modelBuilder.Entity<Kullanici>()
                 .HasOne(k => k.Profil)
                 .WithOne(p => p.Kullanici)
+                .HasForeignKey<Profil>(p => p.KullaniciId);
             
             base.OnModelCreating(modelBuilder);
         }
