@@ -1,7 +1,7 @@
 # SQLRelations
 EF Core'da Veritabanı İlişkilerini Anlamak.
 
-Veritabanı İlişkilerini basit örneklerle anlatabilmek için, metaforik olarak gözde canlandırabilmek amacıyla yazılmıştır.
+Veritabanı İlişkilerini basit örneklerle anlatabilmek için, metaforik olarak gözde canlandırabilmek amacıyla hazırlanmıştır.
 
 Bire Bir(ONE-TO-ONE) İlişki:
 
