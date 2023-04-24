@@ -1,10 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SQLRelations.BireBir;
+using SQLRelations.BireCok;
 
 namespace SQLRelations
 {
-    internal class DataContext : DbContext
+    public class DataContext : DbContext
     {
+        public DataContext()
+        {
+            
+        }
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
             
@@ -19,10 +24,18 @@ namespace SQLRelations
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            //BIRE BIR ILISKI
             modelBuilder.Entity<Kullanici>()
                 .HasOne(k => k.Profil)
                 .WithOne(p => p.Kullanici)
                 .HasForeignKey<Profil>(p => p.KullaniciId);
+
+            //BIRE COK ILISKI
+            modelBuilder.Entity<Kategori>()
+                .HasMany(k => k.Urunler)
+                .WithOne(p => p.Kategori)
+                .HasForeignKey(p => p.KategoriId);
             
             base.OnModelCreating(modelBuilder);
         }
